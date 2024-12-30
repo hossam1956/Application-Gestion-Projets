@@ -1,0 +1,104 @@
+.dashboard {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    row-gap: 20px;
+  }
+  
+  .card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-title {
+    margin-bottom: 15px;
+  }
+  
+  .highlight {
+    color: blue;
+  }
+  
+  .details-button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .details-button:hover {
+    background: #0056b3;
+  }
+  
+  .legend span {
+    display: inline-block;
+    margin: 5px 10px;
+  }
+  
+  .normal {
+    color: blue;
+  }
+  
+  .medium {
+    color: orange;
+  }
+  
+  .high {
+    color: red;
+  }
+  
+  .chart-legend {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+  }
+  
+  .chart-legend li {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+  }
+  
+  .color-box {
+    width: 12px;
+    height: 12px;
+    margin-right: 8px;
+    display: inline-block;
+    border-radius: 50%;
+  }
+  
+  .color-box.blue {
+    background: blue;
+  }
+  
+  .color-box.pink {
+    background: pink;
+  }
+  
+  .color-box.orange {
+    background: orange;
+  }
+  
+  
+  .summary-item {
+    width: 30%;
+  }
+  
+  .icon {
+    font-size: 1.5rem;
+  }
+  
+  .completion-rate h4 {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .completion-rate canvas {
+    max-width: 100%;
+  }
+  
+  

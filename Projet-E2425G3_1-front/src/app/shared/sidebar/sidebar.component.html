@@ -1,0 +1,102 @@
+<!-- Menu -->
+<div class="app-brand demo">
+  <a href="index.html" class="app-brand-link">
+    <span class="app-brand-logo demo"></span>
+    <span class="app-brand-text menu-text fw-bolder ms-2">Gestion Projet</span>
+  </a>
+  <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+    <i class="bx bx-chevron-left bx-sm align-middle"></i>
+  </a>
+</div>
+
+<div class="menu-inner-shadow"></div>
+<ul class="menu-inner py-1">
+  <!-- Dashboard -->
+  <li class="menu-item">
+    <a class="menu-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <i class="menu-icon tf-icons bx bx-home-circle"></i>
+      <div>Dashboard</div>
+    </a>
+  </li>
+
+ 
+
+  <!-- Settings -->
+  <li class="menu-item">
+    <a class="menu-link" routerLink="settings" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <i class="menu-icon tf-icons bx bx-cog"></i>
+      <div>Settings</div>
+    </a>
+  </li>
+
+  <!-- Project Section -->
+  <li class="menu-header small text-uppercase" style="font-size: 12px;">
+    <span class="menu-header-text">
+      MY PROJECTS
+      <a href="/add-project"><i class="menu-icon tf-icons bx bx-plus-circle"></i></a>
+    </span>
+  </li>
+
+  <!--  Project List -->
+  <li
+  class="menu-item"
+  *ngFor="let project of projects"
+  (click)="toggleDropdown(project.id!.toString())"
+>
+  <a href="javascript:void(0);" class="menu-link d-flex align-items-center justify-content-between">
+    <div class="d-flex align-items-center">
+      <i class="menu-icon tf-icons bx bx-folder"></i>
+      <div>{{ project.nom }}</div>
+    </div>
+    <i class="bx" [class.bx-chevron-down]="!openDropdowns[project.id]" [class.bx-chevron-up]="openDropdowns[project.id]"></i>
+  </a>
+  <ul
+    class="menu-inner py-1"
+    *ngIf="openDropdowns[project.id]"
+    style="padding-left: 20px;"
+  >
+    <li class="menu-item" (click)="$event.stopPropagation()">
+      <a
+        [routerLink]="['/project', project.id, 'board']"
+        routerLinkActive="active"
+        class="menu-link"
+      >
+        <i class="menu-icon tf-icons bx bxs-dashboard"></i>
+        <div>Task Board</div>
+      </a>
+    </li>
+    <li class="menu-item" (click)="$event.stopPropagation()">
+      <a
+        [routerLink]="['/project', project.id, 'tasks-list']"
+        routerLinkActive="active"
+        class="menu-link"
+      >
+        <i class="menu-icon tf-icons bx bx-list-ul"></i>
+        <div>Tasks List</div>
+      </a>
+    </li>
+    <li class="menu-item" (click)="$event.stopPropagation()">
+      <a
+        [routerLink]="['/project', project.id, 'team']"
+        routerLinkActive="active"
+        class="menu-link"
+      >
+        <i class="menu-icon tf-icons bx bx-user-pin"></i>
+        <div>Members</div>
+      </a>
+    </li>
+    <li class="menu-item" (click)="$event.stopPropagation()">
+      <a
+        [routerLink]=""
+        routerLinkActive="active"
+        class="menu-link"
+      >
+        <i class="menu-icon tf-icons bx bx-message-dots"></i>
+        <div>Chat</div>
+      </a>
+    </li>
+  </ul>
+</li>
+
+
+</ul>

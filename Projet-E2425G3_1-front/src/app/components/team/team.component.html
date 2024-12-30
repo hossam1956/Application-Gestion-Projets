@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="d-flex justify-content-end align-items-center mb-3">
+    <h4 class="fw-bold py-3 mb-4 me-auto">
+      <span class="text-muted fw-light"></span> Project Members
+    </h4>
+    <button
+      type="button"
+      class="btn btn-outline-primary me-3"
+      data-bs-toggle="modal"
+      data-bs-target="#addModal"
+    >
+      Add Member
+    </button>
+  </div>
+  <app-add-member
+    class="modal fade"
+    id="addModal"
+    tabindex="-1"
+    aria-hidden="true"
+    [projectId]="projectId" 
+    (memberAdded)="loadProjectMembers()"
+ 
+
+  ></app-add-member>
+  <div class="card" >
+    <h5 class="card-header">Team Members</h5>
+    <div class="table-responsive text-nowrap">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Profile Image</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody class="table-border-bottom-0">
+          <tr *ngFor="let member of members">
+            <td><strong>{{ member.username }}</strong></td>
+            <td>{{ member.email }}</td>
+            <td>
+              <img [src]="member.profileImageUrl" alt="Avatar" class="rounded-circle" width="30" height="30" />
+            </td>
+            <td>
+              <span class="badge bg-label-success me-1">Active</span>
+            </td>
+            <td>
+              <button type="button" class="btn btn-outline-danger">Remove</button>
+            </td>
+          </tr>
+        </tbody>
+        
+      </table>
+    </div>
+  </div>  
+</div>

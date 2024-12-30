@@ -1,0 +1,49 @@
+version: 2.27.0
+services:
+  front:
+    build:
+      context: ./Projet-E2425G3_1-front 
+      dockerfile: dockerfile
+    ports:
+      - '80:80'
+    depends_on:
+      - back
+
+  back:
+    build:
+      context: ./Projet-E2425G3_1-back 
+      dockerfile: dockerfile
+    environment:
+      MYSQL_DB_URL: jdbc:mysql://0.0.0.0:3306/gestion_projets
+    ports:
+      - '8080:8082'
+    restart: always
+    depends_on:
+      - mysql
+      - mongo
+
+  mysql:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: gestion_projets
+    ports:
+      - '3306:3306'
+    restart: always
+    volumes:
+      - ./DataBase/sql:/var/lib/mysql 
+
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - "8085:80"
+    environment:
+      - PMA_HOST=mysql
+      - PMA_PORT=3306
+      - PMA_ARBITRARY=0

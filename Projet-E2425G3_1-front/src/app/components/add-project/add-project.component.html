@@ -1,0 +1,62 @@
+<div class="d-flex justify-content-center align-items-center vh-100">
+  <div class="col-xl-6" style="width: 70%; height: 80%;">
+    <div class="card mb-4 h-100">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        <h5 class="mb-0">Add Project</h5>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+            <label class="form-label text-primary" for="project-name">Project Name</label>
+            <div class="input-group input-group-merge">
+              <input
+                type="text"
+                class="form-control"
+                id="project-name"
+                formControlName="nom"
+                placeholder="Web App"
+              />
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label text-success" for="project-description">Description</label>
+            <div class="input-group input-group-merge">
+              <textarea
+                id="project-description"
+                class="form-control"
+                placeholder="Leave us a Description for your Project?"
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label for="datedebut" class="col-md-2 col-form-label text-danger">Start Date</label>
+            <div class="col-md-10">
+              <input
+                class="form-control"
+                type="datetime-local"
+                id="datedebut"
+                formControlName="datedebut"
+              />
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label for="datefin" class="col-md-2 col-form-label text-warning">End Date</label>
+            <div class="col-md-10">
+              <input
+                class="form-control"
+                type="datetime-local"
+                id="datefin"
+                formControlName="datefin"
+              />
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100" [disabled]="projectForm.invalid">Save</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

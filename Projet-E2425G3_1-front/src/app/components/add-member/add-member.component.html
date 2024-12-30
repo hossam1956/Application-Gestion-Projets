@@ -1,0 +1,42 @@
+<div class="modal-dialog modal-dialog-centered ">
+    <div class="modal-content">
+
+        <div class="modal-header">
+            <div class="container-xxl flex-grow-1 container-p-y">
+
+                <div class="text-center mb-4">
+                    <h1 class="fw-bold">Add member</h1>
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <div class="modal-body">
+            <form [formGroup]="teamForm" (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                    <label for="add-member" class="form-label">Select Member</label>
+                    <select
+                      class="form-select"
+                      id="add-member"
+                      [(ngModel)]="selectedUserId"
+                      (change)="onUserChange($event)"
+                      formControlName="userId"
+                    >
+                      <option *ngFor="let member of members" [value]="member.id">
+                        {{ member.username }}
+                      </option>
+                    </select>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Add</button>
+                </div>
+            </form>
+        </div>
+        
+
+    </div>
+</div>

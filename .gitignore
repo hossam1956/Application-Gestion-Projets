@@ -1,0 +1,45 @@
+/DataBase/*
+.env
+# Miscellaneous
+projet_e2425g3_1_flutter/*.class
+projet_e2425g3_1_flutter/*.log
+projet_e2425g3_1_flutter/*.pyc
+projet_e2425g3_1_flutter/*.swp
+projet_e2425g3_1_flutter/.DS_Store
+projet_e2425g3_1_flutter/.atom/
+projet_e2425g3_1_flutter/.buildlog/
+projet_e2425g3_1_flutter/.history
+projet_e2425g3_1_flutter/.svn/
+projet_e2425g3_1_flutter/migrate_working_dir/
+
+# IntelliJ related
+projet_e2425g3_1_flutter/*.iml
+projet_e2425g3_1_flutter/*.ipr
+projet_e2425g3_1_flutter/*.iws
+projet_e2425g3_1_flutter/.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+# projet_e2425g3_1_flutter/.vscode/
+
+# Flutter/Dart/Pub related
+projet_e2425g3_1_flutter/**/doc/api/
+projet_e2425g3_1_flutter/**/ios/Flutter/.last_build_id
+projet_e2425g3_1_flutter/.dart_tool/
+projet_e2425g3_1_flutter/.flutter-plugins
+projet_e2425g3_1_flutter/.flutter-plugins-dependencies
+projet_e2425g3_1_flutter/.pub-cache/
+projet_e2425g3_1_flutter/.pub/
+projet_e2425g3_1_flutter/build/
+
+# Symbolication related
+projet_e2425g3_1_flutter/app.*.symbols
+
+# Obfuscation related
+projet_e2425g3_1_flutter/app.*.map.json
+
+# Android Studio will place build artifacts here
+projet_e2425g3_1_flutter/android/app/debug
+projet_e2425g3_1_flutter/android/app/profile
+projet_e2425g3_1_flutter/android/app/release

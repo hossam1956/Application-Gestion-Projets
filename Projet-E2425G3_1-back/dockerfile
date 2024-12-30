@@ -1,0 +1,7 @@
+FROM openjdk:21-jdk-oracle
+
+WORKDIR /app
+
+COPY ./target/GestionProjets-0.0.1-SNAPSHOT.jar gp.jar
+
+CMD ["java", "-DskipTests", "-jar", "gp.jar"]

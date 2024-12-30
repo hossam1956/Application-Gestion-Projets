@@ -1,0 +1,54 @@
+<div class="container">
+  <!-- Page Header -->
+  <header class="page-header">
+    <h1>Web Application</h1>
+    <button class="add-task-btn" data-bs-toggle="modal" data-bs-target="#addModal">+ Add Task</button>
+  </header>
+
+  <!-- Add Task Modal -->
+  <app-add-task class="modal fade" id="addModal" tabindex="-1" aria-hidden="true" (taskAdded)="loadTasks()"></app-add-task>
+ <app-update-task class="modal fade" id="updateModal" tabindex="-1" aria-hidden="true"  ></app-update-task>
+  <!-- Scrum Board -->
+  <div class="flex board-container">
+    <div
+      *ngFor="let section of sections"
+      class="section"
+      (dragover)="onDragOver($event)"
+      (drop)="onDrop($event, section)"
+    >
+      <!-- Section Header -->
+      <span class="title">{{ section }} ({{ getTasksForSection(section).length }})</span>
+
+      <!-- Stories List -->
+      <div class="story-list">
+        <div
+          *ngFor="let task of getTasksForSection(section)"
+          class="story"
+          draggable="true"
+          (dragstart)="onDragStart($event, task)"
+        >
+          <!-- Task ID -->
+          <div class="task-id">
+            <span class="copy-id" (click)="copyTaskId(task.id)">#{{ task.id }}</span>
+          </div>
+
+          <!-- Task Content -->
+          <div class="task-content">
+            <div class="task-header">
+              <span class="priority {{ task.priority | lowercase }}">{{ task.priority }}</span>
+              <span class="assignee">{{ task?.userAssignee?.username }}</span>
+            </div>
+            <h3 class="task-title">{{ task.title }}</h3>
+            <p class="task-description">{{task.description}}</p>
+            <div class="task-footer">
+              <span class="due-date">Due: {{ task.deadline }}</span>
+            </div>
+          </div>
+           <i class="menu-icon tf-icons bx bx-edit"  data-bs-toggle="modal" data-bs-target="#updateModal" (click)="editClick()"></i>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

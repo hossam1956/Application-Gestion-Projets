@@ -1,0 +1,55 @@
+<div class="modal-dialog modal-dialog-centered ">
+    <div class="modal-content">
+        <div class="modal-header">
+            <div class="container-xxl flex-grow-1 container-p-y">
+                <div class="text-center mb-4">
+                    <h1 class="fw-bold">Update Task</h1>
+                </div>
+            </div>
+        </div>
+        <!-- Basic Layout -->
+        <div class="modal-body">
+            <form>
+                <div class="mb-3">
+                    <label class="form-label" for="basic-default-fullname">Title</label>
+                    <input type="text" class="form-control" id="basic-default-fullname" placeholder="Enter a Title" />
+                </div>
+                <div class="mb-3">
+                    <label for="prioritySelect" class="form-label">Set Priority</label>
+                    <select class="form-select priority-select" id="prioritySelect" aria-label="Priority select">
+                        <option value="high" class="priority-high">High</option>
+                        <option value="medium" class="priority-medium">Medium</option>
+                        <option value="normal" class="priority-normal">Normal</option>
+                    </select>
+                </div>
+                <!-- Description Field -->
+                <div class="mb-3">
+                    <label class="form-label" for="floatingInput">Description</label>
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Description" />
+                    </div>
+                </div>
+                <!-- Date Fin Field -->
+                <div class="mb-3">
+                    <label class="form-label" for="html5-date-input-end">End Date
+                    </label>
+                    <input class="form-control" type="date" id="html5-date-input-end" />
+                </div>
+                <!-- Assignés un utilisateur Field -->
+                <div class="mb-3">
+                    <label for="exampleFormControlSelect1" class="form-label">Assign a user</label>
+                    <select class="form-select" id="exampleFormControlSelect1" aria-label="Default select example">
+                        <option selected>Select a User</option>
+                        <option value="1"></option>
+                        <option value="2"></option>
+                        <option value="3"></option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
